@@ -1,38 +1,21 @@
-# create-svelte
+# named-speaking-timer
+---
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Who speaks next?
 
-## Creating a project
+This app takes a list of names and randomly picks one to speak for a set amount of time.
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Insert speakers' names.
+2. Choose prep-time and speaking-time.
+3. Click begin!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+User Story:
+- Add student names to a list
+- Have a timer where prep and speaking times can be chosen in second intervals.
+- There should be a button to submit the names and times.
+- After submission, there should be a few seconds before a name is chosen.
+- Once the name is displayed, the prep timer displays and begins to countdown.
+- After the prep-timer is finished, there should be a beep.
+- Then the speaking timer starts.  Once finished there should be another beep.
+- Then there should be a button to select the next student.
+- Continue until the list is exhausted.
