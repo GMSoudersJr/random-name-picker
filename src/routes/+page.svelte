@@ -16,6 +16,3 @@
 <RandomNameButton />
 <CurrentName />
 <ListOfNames />
-
-<style>
-</style>
