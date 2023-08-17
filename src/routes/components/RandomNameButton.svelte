@@ -3,26 +3,29 @@
 
   function chooseRandomName() {
     if ( $arrayOfNames.length === 0 ) {
-      return "No more names";
+      console.log("no more names");
+      currentName.set("No more names.  Reset the list.")
     } else {
       let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
       let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
-      console.log($arrayOfNames);
-      console.log(randomName[0]);
-      console.log(indexOfRandomName);
       currentName.set(randomName);
       arrayOfNames.set($arrayOfNames);
     }
   }
+  let buttonText = "Pick a Name 🎫";
 </script>
 
 <button
+  id="pick-names"
+  name="pick-names"
   type="button"
-  class="button"
+  class="button pick-names"
   on:click={chooseRandomName}
+  disabled={$arrayOfNames.length == 0}
 >
-  Pick a Name
+  {buttonText}
 </button>
 
 <style>
+  button
 </style>

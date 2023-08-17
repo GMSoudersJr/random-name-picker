@@ -5,17 +5,17 @@
   import SetNamesButton from './components/SetNamesButton.svelte';
   import ClearNamesButton from './components/ClearNamesButton.svelte';
   import ListOfNames from './components/ListOfNames.svelte';
-
+  import CurrentName from './components/CurrentName.svelte';
+  import ProjectTitle from './components/ProjectTitle.svelte';
 
 </script>
 
+<ProjectTitle />
 <NamesTextArea />
 <SetNamesButton />
 <ClearNamesButton />
 <RandomNameButton />
-<h1>
-  {$currentName}
-</h1>
+<CurrentName />
 <ListOfNames />
 
 <style>

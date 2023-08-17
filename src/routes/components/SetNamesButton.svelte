@@ -20,8 +20,9 @@
   type="button"
   class="button set-names"
   on:click={setArrayOfNames}
+  disabled={$stringOfNames.length == 0}
 >
-  {$arrayOfNames.length > 0 ? "Reset List" : "Set List"}
+  {$arrayOfNames.length > 0 ? "Reset List 🔄" : "Set List 📋"}
 </button>
 <style>
 </style>

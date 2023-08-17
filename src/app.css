@@ -1,0 +1,33 @@
+:root {
+  --fontFamilyHeading: "Roboto", sans-serif;
+  --fontFamilyRegular: "Noto Sans KR", sans-serif;
+  --fontFamilyEmoji: "Noto Color Emoji", "Roboto", sans-serif;
+}
+* {
+  user-select:none;
+	box-sizing: border-box;
+}
+body {
+  background: #F1F1F1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: start;
+  gap: 1rem;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+}
+button {
+  padding: 15px 32px;
+  font-size: 16px;
+  align-self: center;
+  font-family: var(--fontFamilyEmoji);
+  color: black;
+  width: 100%;
+}
+textarea {
+  font-family: var(--fontFamilyRegular)
+  width: 100%;
+}

@@ -5,7 +5,7 @@
     stringOfNames
   } from '$lib/stores.js';
 
-  function resetNames() {
+  function clearNames() {
     arrayOfNames.set([]);
     currentName.set("");
     stringOfNames.set("");
@@ -13,14 +13,18 @@
 </script>
 
 <button
-  id="reset-names"
+  id="clear-names"
+  name="clear-names"
   type="button"
-  class="button reset"
-  name="reset"
-  on:click={resetNames}
+  class="button clear-names"
+  on:click={clearNames}
+  disabled={$stringOfNames.length == 0}
 >
-  Clear Names
+  Clear Names 🗑
 </button>
 
 <style>
+  button {
+    font-family: var(--fontFamilyEmoji);
+  }
 </style>
