@@ -2,6 +2,28 @@
   --fontFamilyHeading: "Roboto", sans-serif;
   --fontFamilyRegular: "Noto Sans KR", sans-serif;
   --fontFamilyEmoji: "Noto Color Emoji", "Roboto", sans-serif;
+  /* mobile typography */
+
+  /* body to header ratio: 1.3 */
+  --fontSizeHeaderMobile: 21px;
+  --fontSizeSubheaderMobile: 18px;
+  --fontSizeBodyTextMobile: 16px;
+
+  /* body to header ratio: 1.432 */
+  --fontSizeHeaderTablet: 26px;
+  --fontSizeSubheaderTablet: 23px;
+  --fontSizeBodyTextTablet: 18px;
+
+  /* body to header ratio: 1.696 */
+  --fontSizeHeaderLaptop: 34px;
+  --fontSizeSubheaderLaptop: 30px;
+  --fontSizeBodyTextLaptop: 20px;
+
+  /* body to header ratio: 1.96 */
+  --fontSizeHeaderMonitor: 41px;
+  --fontSizeSubheaderMonitor: 36px;
+  --fontSizeBodyTextMonitor: 21px;
+
 }
 * {
   user-select:none;
