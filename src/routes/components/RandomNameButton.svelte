@@ -12,7 +12,8 @@
       arrayOfNames.set($arrayOfNames);
     }
   }
-  let buttonText = "Pick a Name 🎫";
+
+  $: buttonText = $arrayOfNames.length > 0 ? "Pick a Name 🎫" : "Click Set List";
 </script>
 
 <button

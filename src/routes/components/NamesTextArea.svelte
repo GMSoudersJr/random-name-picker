@@ -15,8 +15,7 @@
     name="name-list"
     class="input"
     bind:value={$stringOfNames}
-    placeholder="Separate names with a space, comma, period, or enter."
-    rows=10
+    placeholder="ENTER NAMES HERE!"
     required
   ></textarea>
 </div>
@@ -26,17 +25,25 @@
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    border-radius: 10px;
+    background: white;
+    background: linear-gradient(150deg, pink, orange);
+    height: 25vh;
+    padding: 15px 20px 20px 20px;
   }
   label {
-    font-size: 24px;
     font-family: var(--fontFamilyEmoji);
     text-align: center;
     align-items: center;
+    color: dodgerblue;
   }
   textarea {
     resize: none;
     padding: 12px 15px;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
+    height: 100%;
+    background: #F1F1F1;
+    color: dodgerblue;
   }
 </style>

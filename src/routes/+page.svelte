@@ -1,5 +1,9 @@
 <script>
-  import { arrayOfNames, currentName } from '$lib/stores.js';
+  import {
+    arrayOfNames,
+    currentName,
+    stringOfNames,
+  } from '$lib/stores.js';
   import ProjectTitle from './components/ProjectTitle.svelte';
   import NamesTextArea from './components/NamesTextArea.svelte';
   import SetNamesButton from './components/SetNamesButton.svelte';
@@ -11,8 +15,11 @@
 
 <ProjectTitle />
 <NamesTextArea />
-<SetNamesButton />
-<ClearNamesButton />
-<RandomNameButton />
+{#if $stringOfNames.length > 0}
+  <SetNamesButton />
+  <ClearNamesButton />
+{/if}
+{#if $arrayOfNames.length > 0}
 <CurrentName />
-<ListOfNames />
+<RandomNameButton />
+{/if}

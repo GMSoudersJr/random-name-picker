@@ -14,7 +14,7 @@
   }
   .inner-container {
     border-radius: 5px;
-    padding: 2rem;
+    padding: 1rem;
     background-color: #F1F1F1;
   }
   h1 {
@@ -22,5 +22,6 @@
     background-color: #F1F1F1;
     letter-spacing: -1.5px;
     margin: 0;
+    color: dodgerblue;
   }
 </style>

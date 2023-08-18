@@ -24,7 +24,4 @@
 </button>
 
 <style>
-  button {
-    font-family: var(--fontFamilyEmoji);
-  }
 </style>
