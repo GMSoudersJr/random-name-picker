@@ -19,7 +19,7 @@
   <SetNamesButton />
   <ClearNamesButton />
 {/if}
-{#if $arrayOfNames.length > 0}
-<CurrentName />
-<RandomNameButton />
+{#if $arrayOfNames.length > 0 || $currentName}
+  <CurrentName />
+  <RandomNameButton />
 {/if}

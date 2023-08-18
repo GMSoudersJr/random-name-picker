@@ -3,8 +3,7 @@
 
   function chooseRandomName() {
     if ( $arrayOfNames.length === 0 ) {
-      console.log("no more names");
-      currentName.set("No more names.  Reset the list.")
+      currentName.set("")
     } else {
       let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
       let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
