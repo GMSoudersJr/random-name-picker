@@ -20,6 +20,5 @@
   <ClearNamesButton />
 {/if}
 {#if $arrayOfNames.length > 0 || $currentName}
-  <CurrentName />
   <RandomNameButton />
 {/if}

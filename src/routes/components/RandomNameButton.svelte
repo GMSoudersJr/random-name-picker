@@ -3,7 +3,7 @@
 
   function chooseRandomName() {
     if ( $arrayOfNames.length === 0 ) {
-      currentName.set("")
+      currentName.set("All done.")
     } else {
       let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
       let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
@@ -12,7 +12,6 @@
     }
   }
 
-  $: buttonText = $arrayOfNames.length > 0 ? "Pick a Name 🎫" : "Click Set List";
 </script>
 
 <button
@@ -21,10 +20,45 @@
   type="button"
   class="button pick-names"
   on:click={chooseRandomName}
-  disabled={$arrayOfNames.length == 0}
 >
-  {buttonText}
+    {#if !$currentName}
+      <h4>CLICK FOR A  RANDOM NAME</h4>
+    {:else}
+    <div class="emoji">
+      🗣
+    </div>
+    <h1 class="speaker-name">
+      {$currentName}
+    </h1>
+    {/if}
 </button>
 
 <style>
+  .pick-names {
+    height: 15vh;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+    background: #FFF;
+  }
+  .emoji {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    font-family: var(--fontFamilyEmoji);
+    font-size: var(--fontSizeHeaderMonitor);
+    flex: 1
+  }
+  .speaker-name {
+    text-align: center;
+    padding-left: 0.5em;
+    color: dodgerblue;
+    flex: 2;
+  }
+  h4 {
+    text-align: center;
+  }
 </style>
