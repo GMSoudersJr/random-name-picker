@@ -1,5 +1,8 @@
 <script>
-  import { arrayOfNames, currentName } from '$lib/stores.js';
+  import {
+    arrayOfNames,
+    currentName
+  } from '$lib/stores.js';
 
   function chooseRandomName() {
     if ( $arrayOfNames.length === 0 ) {
@@ -11,7 +14,6 @@
       arrayOfNames.set($arrayOfNames);
     }
   }
-
 </script>
 
 <button
@@ -27,7 +29,9 @@
     <div class="emoji">
       🗣
     </div>
-    <h1 class="speaker-name">
+    <h1
+      class="speaker-name"
+    >
       {$currentName}
     </h1>
     {/if}
@@ -41,7 +45,7 @@
     align-items: center;
     justify-content: space-around;
     align-self: center;
-    background: #FFF;
+    background: var(--colorGray);
   }
   .emoji {
     display: flex;

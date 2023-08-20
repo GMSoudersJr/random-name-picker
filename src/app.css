@@ -24,6 +24,13 @@
   --fontSizeSubheaderMonitor: 36px;
   --fontSizeBodyTextMonitor: 21px;
 
+  /* Colors */
+  --colorBlue: #5680E9;
+  --colorTeal: #84CEEB;
+  --colorAqua: #5AB9EA;
+  --colorGray: #C1C8E4;
+  --colorPurple: #8860D0;
+
 }
 * {
   user-select:none;
@@ -32,7 +39,7 @@
   padding: 0;
 }
 body {
-  background: #F1F1F1;
+  background: var(--colorPurple);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,7 +50,7 @@ body {
 }
 h1 {
   font-family: "Roboto", sans-serif;
-  color: blue;
+  color: var(--colorBlue);
 }
 label {
   font-size: var(--fontSizeSubheaderMobile);
@@ -56,10 +63,15 @@ button {
   color: black;
   width: 100%;
   border-radius: 5px;
+  background: var(--colorGray);
+}
+button:hover {
+  filter: brightness(110%);
 }
 textarea {
   font-family: var(--fontFamilyRegular)
   width: 100%;
+  color: var(--colorBlue)
 }
 
 @media screen and (min-width: 40em) {

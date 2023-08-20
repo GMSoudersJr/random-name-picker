@@ -44,6 +44,6 @@
     font-size: 16px;
     height: 100%;
     background: #F1F1F1;
-    color: dodgerblue;
+    color: black;
   }
 </style>
