@@ -28,6 +28,7 @@
     border-radius: 10px;
     background: white;
     background: linear-gradient(150deg, pink, orange);
+    background: linear-gradient(150deg, var(--colorAqua), var(--colorPurple));
     height: 25vh;
     padding: 15px 20px 20px 20px;
   }
@@ -35,7 +36,7 @@
     font-family: var(--fontFamilyEmoji);
     text-align: center;
     align-items: center;
-    color: dodgerblue;
+    color: var(--colorCharcoal );
   }
   textarea {
     resize: none;

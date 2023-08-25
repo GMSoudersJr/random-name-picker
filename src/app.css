@@ -30,6 +30,7 @@
   --colorAqua: #5AB9EA;
   --colorGray: #C1C8E4;
   --colorPurple: #8860D0;
+  --colorCharcoal: #28231D;
 
 }
 * {
@@ -38,8 +39,13 @@
   margin: 0;
   padding: 0;
 }
+html {
+  display: flex;
+  flex-direction: column;
+}
 body {
   background: var(--colorPurple);
+  min-width: 50vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -92,6 +98,9 @@ textarea {
   h1 {
     font-size: var(--fontSizeHeaderMonitor);
     color: yellow;
+  }
+  body {
+    align-self: center;
   }
 
 }

@@ -8,6 +8,8 @@
 <style>
   .outer-container {
     background: linear-gradient(to bottom right, purple, pink, orange);
+    background: linear-gradient(to bottom right, var(--colorPurple),
+    var(--colorAqua), var(--colorPurple));
     padding: 1rem;
     border-radius: 5px;
     padding: 5px;
@@ -22,6 +24,6 @@
     background-color: #F1F1F1;
     letter-spacing: -1.5px;
     margin: 0;
-    color: dodgerblue;
+    color: var(--colorPurple);
   }
 </style>
