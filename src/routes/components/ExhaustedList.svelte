@@ -14,6 +14,8 @@
 <style>
   div {
     align-self: center;
+    text-align: center;
+    width: 80%;
   }
   h2 {
     color: gold;
