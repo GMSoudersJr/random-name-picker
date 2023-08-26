@@ -1,4 +1,5 @@
 <script>
+  import { STRINGS } from '$lib/strings.js';
   import {
     arrayOfNames,
     currentName
@@ -6,7 +7,7 @@
 
   function chooseRandomName() {
     if ( $arrayOfNames.length === 0 ) {
-      currentName.set("All done.")
+      currentName.set(null)
     } else {
       let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
       let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
@@ -24,7 +25,7 @@
   on:click={chooseRandomName}
 >
     {#if !$currentName}
-      <h4>CLICK FOR A  RANDOM NAME</h4>
+      <h4>{STRINGS.buttonText.chooseName}</h4>
     {:else}
     <div class="emoji">
       🗣

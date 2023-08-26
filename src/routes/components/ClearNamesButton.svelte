@@ -1,4 +1,5 @@
 <script>
+  import { STRINGS } from '$lib/strings.js';
   import {
     arrayOfNames,
     currentName,
@@ -20,7 +21,7 @@
   on:click={clearNames}
   disabled={$stringOfNames.length == 0}
 >
-  Clear Names 🗑
+  {STRINGS.buttonText.clearNames}
 </button>
 
 <style>

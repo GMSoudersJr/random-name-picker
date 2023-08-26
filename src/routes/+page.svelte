@@ -11,6 +11,7 @@
   import RandomNameButton from './components/RandomNameButton.svelte';
   import CurrentName from './components/CurrentName.svelte';
   import ListOfNames from './components/ListOfNames.svelte';
+  import ExhaustedList from './components/ExhaustedList.svelte';
 </script>
 
 <ProjectTitle />
@@ -21,4 +22,8 @@
 {/if}
 {#if $arrayOfNames.length > 0 || $currentName}
   <RandomNameButton />
+  {#if $arrayOfNames.length == 0}
+    <ExhaustedList />
+  {/if}
 {/if}
+

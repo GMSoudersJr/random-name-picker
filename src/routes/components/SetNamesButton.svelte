@@ -1,4 +1,5 @@
 <script>
+  import { STRINGS } from '$lib/strings.js';
   import {
     arrayOfNames,
     stringOfNames,
@@ -26,10 +27,10 @@
   disabled={$stringOfNames.length == 0}
 >
   {#if $arrayOfNames.length > 0}
-    Reset List 🔄
+    {STRINGS.buttonText.resetList}
   {:else if $currentName}
-    Reload the list
+    {STRINGS.buttonText.reloadList}
   {:else}
-    Set List 📋
+    {STRINGS.buttonText.setList}
   {/if}
 </button>

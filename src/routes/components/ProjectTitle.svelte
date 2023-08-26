@@ -1,13 +1,13 @@
 <script>
+  import { STRINGS } from '$lib/strings.js';
 </script>
 <div class="outer-container">
   <div class="inner-container">
-    <h1>Random Name Picker</h1>
+    <h1>{STRINGS.appTitle}</h1>
   </div>
 </div>
 <style>
   .outer-container {
-    background: linear-gradient(to bottom right, purple, pink, orange);
     background: linear-gradient(to bottom right, var(--colorPurple),
     var(--colorAqua), var(--colorPurple));
     padding: 1rem;
@@ -17,11 +17,11 @@
   .inner-container {
     border-radius: 5px;
     padding: 1rem;
-    background-color: #F1F1F1;
+    background-color: var(--colorWhite);
   }
   h1 {
     text-align: center;
-    background-color: #F1F1F1;
+    background-color: var(--colorWhite);
     letter-spacing: -1.5px;
     margin: 0;
     color: var(--colorPurple);

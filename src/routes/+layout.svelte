@@ -1,9 +1,10 @@
 <script>
+  import { STRINGS } from '$lib/strings.js';
   import '../app.css';
 </script>
 <svelte:head>
   <title>
-    Random Name Picker
+    {STRINGS.appTitle}
   </title>
 </svelte:head>
 <slot />

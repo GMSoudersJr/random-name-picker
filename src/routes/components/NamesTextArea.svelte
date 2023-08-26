@@ -1,4 +1,5 @@
 <script>
+  import { STRINGS } from '$lib/strings.js';
   import { arrayOfNames, stringOfNames } from '$lib/stores.js';
   let labelText = "📝 Names ⬇"
 </script>
@@ -8,14 +9,14 @@
   class="container"
 >
   <label class="label" for="name-list">
-    {labelText}
+    {STRINGS.textarea.label}
   </label>
   <textarea 
     id="name-list"
     name="name-list"
     class="input"
     bind:value={$stringOfNames}
-    placeholder="ENTER NAMES HERE!"
+    placeholder={STRINGS.textarea.placeholder}
     required
   ></textarea>
 </div>

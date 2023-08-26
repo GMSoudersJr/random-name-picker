@@ -31,6 +31,7 @@
   --colorGray: #C1C8E4;
   --colorPurple: #8860D0;
   --colorCharcoal: #28231D;
+  --colorWhite: #F1F1F1;
 
 }
 * {
@@ -101,6 +102,7 @@ textarea {
   }
   body {
     align-self: center;
+    background: var(--colorWhite);
   }
 
 }
