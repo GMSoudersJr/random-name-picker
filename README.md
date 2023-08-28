@@ -19,22 +19,18 @@ simple way to choose names at random from a list
 #### Installation
 To run a version locally on your own machine
 
-make a directory and clone the repository into it
+make a directory and change into it:
 
-`mkdir <dirName>`
+`mkdir <dirName> && cd <dirName>`
 
-go into that directory
-
-`cd <dirName>`
-
-clone the repository there
+clone the repository there:
 
 `git clone git@github.com:GMSoudersJr/random-name-picker.git`
 
-run this command to install all dependencies
+run this command to install all dependencies:
 
 `npm install`
 
-run this command to run a dev server:
+run this command to run a development server:
 
 `npm run dev`
