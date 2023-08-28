@@ -26,7 +26,7 @@ make a directory and change into it:
 mkdir <dirName> && cd <dirName>
 ```
 
-clone the repository there:
+clone the repository there over SSH:
 
 ```bash
 git clone git@github.com:GMSoudersJr/random-name-picker.git
