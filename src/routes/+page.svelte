@@ -15,17 +15,28 @@
   import ListProgress from './components/ListProgress.svelte';
 </script>
 
-<ProjectTitle />
-<NamesTextArea />
-{#if $stringOfNames.length > 0}
-  <ListProgress />
-  <SetNamesButton />
-  <ClearNamesButton />
-{/if}
-{#if $arrayOfNames.length > 0 || $currentName}
-  <RandomNameButton />
-  {#if $arrayOfNames.length == 0}
-    <ExhaustedList />
+<div class="page-container">
+  <ProjectTitle />
+  <NamesTextArea />
+  {#if $stringOfNames.length > 0}
+    <SetNamesButton />
+    <ClearNamesButton />
+    {#if $arrayOfNames.length > 0 || $currentName}
+      <ListProgress />
+      <RandomNameButton />
+      {#if $arrayOfNames.length == 0}
+        <ExhaustedList />
+      {/if}
+    {/if}
   {/if}
-{/if}
+</div>
 
+<style>
+  .page-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+  }
+</style>

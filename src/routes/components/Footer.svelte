@@ -10,9 +10,8 @@
   footer {
     width: 100%;
     text-align: center;
-    border-top: 0.5px dotted var(--colorCharcoal);
     padding: 3px;
-    color: var(--colorWhite);
+    color: var(--colorCharcoal);
     justify-self: end;
   }
 

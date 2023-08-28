@@ -12,7 +12,7 @@ export const STRINGS = {
 		resetList: "Reset List 🔄",
 		reloadList: "Reload the list 🔁",
 		listFinished: "All Done!",
-		chooseName: "CLICK FOR A RANDOM NAME!",
+		chooseName: "CLICK FOR A RANDOM NAME! 📛",
 	},
 	exhaustedList: 'The list is finished.  Click "Reload the list" to start over.',
 	copyright: `©${thisYear()} by Gerald M. Souders Jr.`
