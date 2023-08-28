@@ -1,13 +1,13 @@
-# [Random Name Picker](https://www.random-name-picker-alpha.vercel.app "Gerald's Random Name Picker")
+# [Random Name Picker](https://random-name-picker-alpha.vercel.app "Gerald's Random Name Picker")
 
 Who goes next?
 
 This app takes a list of names and randomly picks one.
 
 User Story:
-- Add names to a list 📋
-- There should be a button to submit/set the list.
-- After inputting names, buttons appear to clear or reload the list 🔄
+- Enter names in a text area
+- Click the Set List 📋 button
+- After inputting names, buttons appear to reload the list 🔄 or clear the list 🗑️
 - Display the name in a clickable button 📛
 - Click the button to choose another name 🎰 
 - Continue until the list is exhausted.
