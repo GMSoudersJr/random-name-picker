@@ -10,7 +10,8 @@
 
   function chooseRandomName() {
     if ( $arrayOfNames.length === 0 ) {
-      currentName.set(null)
+      currentName.set(null);
+      progress.set(0);
     } else {
       let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
       let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
