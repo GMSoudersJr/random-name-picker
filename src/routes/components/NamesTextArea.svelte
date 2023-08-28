@@ -1,6 +1,6 @@
 <script>
   import { STRINGS } from '$lib/strings.js';
-  import { arrayOfNames, stringOfNames } from '$lib/stores.js';
+  import { stringOfNames } from '$lib/stores.js';
   let labelText = "📝 Names ⬇"
 </script>
 
@@ -28,7 +28,6 @@
     gap: 0.5em;
     border-radius: 10px;
     background: white;
-    background: linear-gradient(150deg, pink, orange);
     background: linear-gradient(150deg, var(--colorAqua), var(--colorPurple));
     height: 25vh;
     padding: 15px 20px 20px 20px;
@@ -37,7 +36,7 @@
     font-family: var(--fontFamilyEmoji);
     text-align: center;
     align-items: center;
-    color: var(--colorCharcoal );
+    color: var(--colorWhite );
   }
   textarea {
     resize: none;

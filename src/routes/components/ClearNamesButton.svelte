@@ -3,13 +3,17 @@
   import {
     arrayOfNames,
     currentName,
-    stringOfNames
+    stringOfNames,
+    numberOfNamesDrawn,
+    progress,
   } from '$lib/stores.js';
 
   function clearNames() {
     arrayOfNames.set([]);
     currentName.set("");
     stringOfNames.set("");
+    numberOfNamesDrawn.set(0);
+    progress.set(0);
   }
 </script>
 

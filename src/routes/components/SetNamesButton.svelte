@@ -3,17 +3,24 @@
   import {
     arrayOfNames,
     stringOfNames,
-    currentName
+    currentName,
+    numberOfNamesDrawn,
+    numberOfNames,
+    progress,
   } from '$lib/stores.js';
 
   function setArrayOfNames() {
     currentName.set("");
+    numberOfNamesDrawn.set(0);
+    arrayOfNames.set([]);
     let cleanedArrayOfNames =
       $stringOfNames.split(/[,.\s]/).filter(name => name.length > 0);
     if ($stringOfNames.length === 0) {
       console.log("no names inserted");
     } else {
       arrayOfNames.set(cleanedArrayOfNames);
+      numberOfNames.set(cleanedArrayOfNames.length);
+      progress.set(0);
     }
   }
 </script>

@@ -12,11 +12,13 @@
   import CurrentName from './components/CurrentName.svelte';
   import ListOfNames from './components/ListOfNames.svelte';
   import ExhaustedList from './components/ExhaustedList.svelte';
+  import ListProgress from './components/ListProgress.svelte';
 </script>
 
 <ProjectTitle />
 <NamesTextArea />
 {#if $stringOfNames.length > 0}
+  <ListProgress />
   <SetNamesButton />
   <ClearNamesButton />
 {/if}

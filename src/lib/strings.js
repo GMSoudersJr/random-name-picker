@@ -12,5 +12,5 @@ export const STRINGS = {
 		listFinished: "All Done!",
 		chooseName: "CLICK FOR A RANDOM NAME!",
 	},
-	exhaustedList: 'The list is finished.  Click "Reload the list" to start over.'
+	exhaustedList: 'The list is finished.  Click "Reload the list" to start over.',
 };

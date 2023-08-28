@@ -2,7 +2,10 @@
   import { STRINGS } from '$lib/strings.js';
   import {
     arrayOfNames,
-    currentName
+    currentName,
+    numberOfNames,
+    numberOfNamesDrawn,
+    progress,
   } from '$lib/stores.js';
 
   function chooseRandomName() {
@@ -13,6 +16,8 @@
       let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
       currentName.set(randomName);
       arrayOfNames.set($arrayOfNames);
+      numberOfNamesDrawn.update(numberOfNames => numberOfNames = numberOfNames + 1);
+      progress.set(($numberOfNamesDrawn/$numberOfNames));
     }
   }
 </script>
