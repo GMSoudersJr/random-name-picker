@@ -6,10 +6,10 @@ Visit the app by clicking [here](https://random-name-picker-alpha.vercel.app "Ge
 
 ## Instructions for use
 - Enter names in a text area
-- Click the Set List 📋 button
-- After setting the names, buttons appear to reload the list 🔄 or clear the list 🗑️
+- Then choose whether to set the list 📋 or clear the list 🗑️
+- After clicking the Set List 📋 button, you can decide to reset the list 🔄, clear the list 🗑️, or click a button for a random name
 - Display the name in a clickable button 📛
-- Click the button to choose another name 🎰 
+- Click the button to choose another name 🗣️ 
 - Continue clicking until the list is exhausted 😮‍💨
 - Reload, Reset, or Clear the List at any time.
 - Displays a progress bar to show completeness of the list.
