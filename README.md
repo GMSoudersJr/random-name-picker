@@ -1,20 +1,21 @@
 # [Random Name Picker](https://random-name-picker-alpha.vercel.app "Gerald's Random Name Picker")
 
+### purpose
+simple way to choose names at random from a list
+
 Who goes next?
 
 This app takes a list of names and randomly picks one.
 
-User Story:
+## Instructions for use:
 - Enter names in a text area
 - Click the Set List 📋 button
-- After inputting names, buttons appear to reload the list 🔄 or clear the list 🗑️
+- After setting the names, buttons appear to reload the list 🔄 or clear the list 🗑️
 - Display the name in a clickable button 📛
 - Click the button to choose another name 🎰 
-- Continue until the list is exhausted.
-- Display a progress bar to show completeness of the list.
-
-### purpose
-simple way to choose names at random from a list
+- Continue clicking until the list is exhausted 😮‍💨
+- Reload, Reset, or Clear the List at any time.
+- Displays a progress bar to show completeness of the list.
 
 ## Installation
 To run a version locally on your own machine
