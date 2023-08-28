@@ -1,13 +1,10 @@
 # [Random Name Picker](https://random-name-picker-alpha.vercel.app "Gerald's Random Name Picker")
 
-### purpose
-simple way to choose names at random from a list
+This web-app takes a user generated list of names and randomly picks one.
 
-Who goes next?
+Visit the app by clicking [here](https://random-name-picker-alpha.vercel.app "Gerald's Random Name Picker") or on the project name ⬆️!
 
-This app takes a list of names and randomly picks one.
-
-## Instructions for use:
+## Instructions for use
 - Enter names in a text area
 - Click the Set List 📋 button
 - After setting the names, buttons appear to reload the list 🔄 or clear the list 🗑️
@@ -18,28 +15,33 @@ This app takes a list of names and randomly picks one.
 - Displays a progress bar to show completeness of the list.
 
 ## Installation
+This project was built with Svelte and uses its basic dependencies.  No other libraries or frameworks were used.
+
 To run a version locally on your own machine
 
-make a directory and change into it:
-
+Optional:
 ```bash
-mkdir <dirName> && cd <dirName>
+#make a directory and change into it:
+mkdir newDirectory && cd newDirectory
 ```
 
-clone the repository there over SSH:
-
+Required:
 ```bash
+#clone the repository into the current directory over SSH:
 git clone git@github.com:GMSoudersJr/random-name-picker.git
-```
-
-run this command to install all dependencies:
-
-```bash
+#change into newly cloned directory:
+cd random-name-picker
+#run this command to install all dependencies:
 npm install
 ```
 
-run this command to run a development server:
-
+for a local development server, run:
 ```bash
 npm run dev
+```
+
+run this commmand to build:
+
+```bash
+npm run build
 ```
