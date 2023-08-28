@@ -16,7 +16,7 @@ User Story:
 ### purpose
 simple way to choose names at random from a list
 
-#### Installation
+## Installation
 To run a version locally on your own machine
 
 make a directory and change into it:
