@@ -1,3 +1,5 @@
+import { thisYear } from '$lib/utils.js';
+
 export const STRINGS = {
 	appTitle: "Random Name Picker",
 	textarea: {
@@ -13,4 +15,5 @@ export const STRINGS = {
 		chooseName: "CLICK FOR A RANDOM NAME!",
 	},
 	exhaustedList: 'The list is finished.  Click "Reload the list" to start over.',
+	copyright: `©${thisYear()} by Gerald M. Souders Jr.`
 };
