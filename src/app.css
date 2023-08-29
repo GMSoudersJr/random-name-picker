@@ -1,6 +1,6 @@
 :root {
   --fontFamilyHeading: "Roboto", sans-serif;
-  --fontFamilyRegular: "Noto Sans KR", sans-serif;
+  --fontFamilyRegular: "Noto Sans KR", "Roboto", sans-serif;
   --fontFamilyEmoji: "Noto Color Emoji", "Roboto", sans-serif;
   /* mobile typography */
 
@@ -56,7 +56,7 @@ body {
   padding: 0.5em;
 }
 h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--fontFamilyHeading);
   color: var(--colorBlue);
 }
 label {

@@ -15,5 +15,5 @@ export const STRINGS = {
 		chooseName: "CLICK FOR A RANDOM NAME! 📛",
 	},
 	exhaustedList: 'The list is finished.  Click "Reload the list" to start over.',
-	copyright: `©${thisYear()} by Gerald M. Souders Jr.`
+	copyright: `© ${thisYear()} by Gerald M. Souders Jr.`
 };
