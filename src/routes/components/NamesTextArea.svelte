@@ -10,15 +10,15 @@
 >
   <label class="label" for="name-list">
     {STRINGS.textarea.label}
+    <textarea 
+      id="name-list"
+      name="name-list"
+      class="input"
+      bind:value={$stringOfNames}
+      placeholder={STRINGS.textarea.placeholder}
+      required
+    ></textarea>
   </label>
-  <textarea 
-    id="name-list"
-    name="name-list"
-    class="input"
-    bind:value={$stringOfNames}
-    placeholder={STRINGS.textarea.placeholder}
-    required
-  ></textarea>
 </div>
 
 <style>
