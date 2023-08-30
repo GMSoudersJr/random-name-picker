@@ -1,7 +1,10 @@
 <script>
   import { socials } from '$lib/socials.js';
+  let innerWidth = 0;
+  $: displayIconLight = innerWidth <= 64 * 16;
 </script>
 
+<svelte:window bind:innerWidth />
 <section class="contact" id="contact">
 {#each socials as social (social.id)}
   <a
@@ -18,7 +21,7 @@
       <img
         id={`${social.id}-icon`}
         class="icon"
-        src={social.iconUrl}
+        src={displayIconLight ? social.iconUrlLight : social.iconUrl}
         alt={social.alt}
       />
     {/if}
@@ -39,6 +42,7 @@
   a {
     text-decoration: none;
   }
+
 
   .icon,
   .email {

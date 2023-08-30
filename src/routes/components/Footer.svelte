@@ -25,4 +25,10 @@
     font-size: 16px;
     line-height: 24px;
   }
+
+  @media screen and (max-width: 64em) {
+    footer {
+      color: var(--colorWhite);
+    }
+  }
 </style>
