@@ -1,8 +1,10 @@
 <script>
   import { STRINGS } from '$lib/strings.js';
+  import Socials from './Socials.svelte';
 </script>
 
 <footer>
+  <Socials />
   <p>{STRINGS.copyright}</p>
 </footer>
 
@@ -13,6 +15,9 @@
     padding: 3px;
     color: var(--colorCharcoal);
     justify-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   footer p {
