@@ -31,9 +31,9 @@
   section {
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 33%
+    column-gap: 3em;
   }
 
   a {
@@ -62,6 +62,9 @@
   @media screen and (max-width: 48em) {
   }
   @media screen and (max-width: 40em) {
+    section {
+      column-gap: 4em;
+    }
   }
 </style>
 
