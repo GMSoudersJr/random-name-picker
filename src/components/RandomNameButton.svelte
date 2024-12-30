@@ -1,75 +1,56 @@
-<script>
-  import { STRINGS } from '$lib/strings.js';
-  import {
-    arrayOfNames,
-    currentName,
-    numberOfNames,
-    numberOfNamesDrawn,
-    progress,
-  } from '$lib/stores.js';
+<script lang="ts">
+	import { STRINGS } from '$lib/strings.js';
+	import {
+		arrayOfNames,
+		currentName,
+		numberOfNames,
+		numberOfNamesDrawn,
+		progress
+	} from '$lib/stores.js';
 
-  function chooseRandomName() {
-    if ( $arrayOfNames.length === 0 ) {
-      currentName.set(null);
-      progress.set(0);
-    } else {
-      let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
-      let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
-      currentName.set(randomName);
-      arrayOfNames.set($arrayOfNames);
-      numberOfNamesDrawn.update(numberOfNames => numberOfNames = numberOfNames + 1);
-      progress.set(($numberOfNamesDrawn/$numberOfNames));
-    }
-  }
+	import {
+		ShuffleIcon,
+		UserIcon,
+		type Icon as IconType
+	} from 'lucide-svelte';
+
+	function chooseRandomName() {
+		if ($arrayOfNames.length === 0) {
+			currentName.set('');
+			progress.set(0);
+		} else {
+			let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
+			let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
+			currentName.set(randomName);
+			arrayOfNames.set($arrayOfNames);
+			numberOfNamesDrawn.update((numberOfNames) => (numberOfNames = numberOfNames + 1));
+			progress.set($numberOfNamesDrawn / $numberOfNames);
+		}
+	}
 </script>
 
 <button
-  id="pick-names"
-  name="pick-names"
-  type="button"
-  class="button pick-names"
-  on:click={chooseRandomName}
+	id="pick-names"
+	name="pick-names"
+	type="button"
+	class="button pick-names"
+	onclick={chooseRandomName}
 >
-    {#if !$currentName}
-      <h4>{STRINGS.buttonText.chooseName}</h4>
-    {:else}
-    <div class="emoji">
-      🗣
-    </div>
-    <h1
-      class="speaker-name"
-    >
-      {$currentName}
-    </h1>
-    {/if}
+	{#if !$currentName}
+		{@const Icon = ShuffleIcon}
+		{STRINGS.buttonText.chooseName} <Icon />
+	{:else}
+		{@const Icon = UserIcon}
+		{$currentName} <Icon strokeWidth={3}/>
+	{/if}
 </button>
 
 <style>
-  .pick-names {
-    height: 15vh;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    align-self: center;
-    background: var(--colorGray);
-  }
-  .emoji {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    font-family: var(--fontFamilyEmoji);
-    font-size: var(--fontSizeHeaderMonitor);
-    flex: 1
-  }
-  .speaker-name {
-    text-align: center;
-    padding-left: 0.5em;
-    color: dodgerblue;
-    flex: 2;
-  }
-  h4 {
-    text-align: center;
-  }
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		font-size: 1.5rem;
+	}
 </style>
