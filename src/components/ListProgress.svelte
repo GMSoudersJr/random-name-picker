@@ -1,10 +1,14 @@
-<script>
-	import { progress } from '$lib/stores.js';
+<script lang="ts">
+	import type { Tween } from 'svelte/motion';
+
+	interface ProgressProps {
+		progress: Tween<number>;
+	}
+
+	let { progress }: ProgressProps = $props();
 </script>
 
-<progress id="list-progress" title="Progress Through List" value={$progress}>
-	{$progress}
-</progress>
+<progress id="list-progress" title="Progress Through List" value={progress.current}></progress>
 
 <style>
 	progress {

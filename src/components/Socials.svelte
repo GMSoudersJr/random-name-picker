@@ -18,7 +18,7 @@
 		>
 			{#if social.id === 'email'}
 				{@const Icon = AtSignIcon}
-				<Icon color={displayIconLight ? "white" : "black"}/>
+				<Icon color={displayIconLight ? 'white' : 'black'} />
 			{:else}
 				<img
 					id={`${social.id}-icon`}

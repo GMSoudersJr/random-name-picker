@@ -1,30 +1,35 @@
 <script lang="ts">
 	import { STRINGS } from '$lib/strings.js';
-	import {
-		arrayOfNames,
-		currentName,
-		numberOfNames,
-		numberOfNamesDrawn,
-		progress
-	} from '$lib/stores.js';
 
-	import {
-		ShuffleIcon,
-		UserIcon,
-		type Icon as IconType
-	} from 'lucide-svelte';
+	import { ShuffleIcon, UserIcon, type Icon as IconType } from 'lucide-svelte';
+	import type { Tween } from 'svelte/motion';
+
+	interface RandomNameButtonProps {
+		listOfNames: string[] | undefined;
+		randomName: string | undefined;
+		progress: Tween<number>;
+		randomNamesCalled: string[];
+	}
+
+	let {
+		randomName = $bindable(),
+		progress = $bindable(),
+		randomNamesCalled = $bindable(),
+		listOfNames
+	}: RandomNameButtonProps = $props();
 
 	function chooseRandomName() {
-		if ($arrayOfNames.length === 0) {
-			currentName.set('');
-			progress.set(0);
+		if (listOfNames?.length === 0) {
+			randomName = undefined;
+			progress.target = 0;
 		} else {
-			let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
-			let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
-			currentName.set(randomName);
-			arrayOfNames.set($arrayOfNames);
-			numberOfNamesDrawn.update((numberOfNames) => (numberOfNames = numberOfNames + 1));
-			progress.set($numberOfNamesDrawn / $numberOfNames);
+			if (listOfNames) {
+				let indexOfRandomName = Math.floor(Math.random() * listOfNames.length);
+				randomName = listOfNames?.splice(indexOfRandomName, 1)[0];
+				randomNamesCalled.push(randomName);
+				progress.target =
+					randomNamesCalled.length / (randomNamesCalled.length + listOfNames.length);
+			}
 		}
 	}
 </script>
@@ -36,12 +41,14 @@
 	class="button pick-names"
 	onclick={chooseRandomName}
 >
-	{#if !$currentName}
+	{#if !randomName}
 		{@const Icon = ShuffleIcon}
-		{STRINGS.buttonText.chooseName} <Icon />
+		{STRINGS.buttonText.chooseName}
+		<Icon />
 	{:else}
 		{@const Icon = UserIcon}
-		{$currentName} <Icon strokeWidth={3}/>
+		{randomName}
+		<Icon strokeWidth={3} />
 	{/if}
 </button>
 

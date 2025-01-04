@@ -1,115 +1,113 @@
 :root {
-  --fontFamilyHeading: "Roboto", sans-serif;
-  --fontFamilyRegular: "Noto Sans KR", "Roboto", sans-serif;
-  --fontFamilyEmoji: "Roboto", sans-serif;
-  /* mobile typography */
+	--fontFamilyHeading: 'Roboto', sans-serif;
+	--fontFamilyRegular: 'Noto Sans KR', 'Roboto', sans-serif;
+	--fontFamilyEmoji: 'Roboto', sans-serif;
+	/* mobile typography */
 
-  /* body to header ratio: 1.3 */
-  --fontSizeHeaderMobile: 21px;
-  --fontSizeSubheaderMobile: 18px;
-  --fontSizeBodyTextMobile: 16px;
+	/* body to header ratio: 1.3 */
+	--fontSizeHeaderMobile: 21px;
+	--fontSizeSubheaderMobile: 18px;
+	--fontSizeBodyTextMobile: 16px;
 
-  /* body to header ratio: 1.432 */
-  --fontSizeHeaderTablet: 26px;
-  --fontSizeSubheaderTablet: 23px;
-  --fontSizeBodyTextTablet: 18px;
+	/* body to header ratio: 1.432 */
+	--fontSizeHeaderTablet: 26px;
+	--fontSizeSubheaderTablet: 23px;
+	--fontSizeBodyTextTablet: 18px;
 
-  /* body to header ratio: 1.696 */
-  --fontSizeHeaderLaptop: 34px;
-  --fontSizeSubheaderLaptop: 30px;
-  --fontSizeBodyTextLaptop: 20px;
+	/* body to header ratio: 1.696 */
+	--fontSizeHeaderLaptop: 34px;
+	--fontSizeSubheaderLaptop: 30px;
+	--fontSizeBodyTextLaptop: 20px;
 
-  /* body to header ratio: 1.96 */
-  --fontSizeHeaderMonitor: 41px;
-  --fontSizeSubheaderMonitor: 36px;
-  --fontSizeBodyTextMonitor: 21px;
+	/* body to header ratio: 1.96 */
+	--fontSizeHeaderMonitor: 41px;
+	--fontSizeSubheaderMonitor: 36px;
+	--fontSizeBodyTextMonitor: 21px;
 
-  /* Colors */
-  --colorBlue: #5680E9;
-  --colorTeal: #84CEEB;
-  --colorAqua: #5AB9EA;
-  --colorGray: #C1C8E4;
-  --colorPurple: #8860D0;
-  --colorCharcoal: #28231D;
-  --colorWhite: #F1F1F1;
-
+	/* Colors */
+	--colorBlue: #5680e9;
+	--colorTeal: #84ceeb;
+	--colorAqua: #5ab9ea;
+	--colorGray: #c1c8e4;
+	--colorPurple: #8860d0;
+	--colorCharcoal: #28231d;
+	--colorWhite: #f1f1f1;
 }
 * {
-  user-select:none;
+	user-select: none;
 	box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 html {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 body {
-  background: var(--colorPurple);
-  min-width: 50vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: start;
-  gap: 1rem;
-  padding: 0.5em;
+	background: var(--colorPurple);
+	min-width: 50vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: start;
+	gap: 1rem;
+	padding: 0.5em;
 }
 h1 {
-  font-family: var(--fontFamilyHeading);
-  color: var(--colorBlue);
+	font-family: var(--fontFamilyHeading);
+	color: var(--colorBlue);
+}
+h2 {
+	font-family: var(--fontFamilyHeading);
 }
 label {
-  font-size: var(--fontSizeSubheaderMobile);
+	font-size: var(--fontSizeSubheaderMobile);
 }
 button {
-  padding: 15px 32px;
-  font-size: 16px;
-  align-self: center;
-  font-family: var(--fontFamilyEmoji);
-  color: black;
-  width: 100%;
-  border-radius: 5px;
-  background: var(--colorGray);
+	padding: 15px 32px;
+	font-size: 16px;
+	align-self: center;
+	font-family: var(--fontFamilyHeading);
+	color: #090909;
+	width: 100%;
+	border-radius: 5px;
+	background: var(--colorGray);
 }
 button:hover {
-  filter: brightness(110%);
+	filter: brightness(110%);
 }
 textarea {
-  font-family: var(--fontFamilyRegular);
-  width: 100%;
-  color: var(--colorBlue);
+	font-family: var(--fontFamilyRegular);
+	width: 100%;
+	color: var(--colorBlue);
 }
 
 @media screen and (min-width: 40em) {
-  h1 {
-    font-size: var(--fontSizeHeaderTablet);
-    color: red;
-  }
-
+	h1 {
+		font-size: var(--fontSizeHeaderTablet);
+		color: red;
+	}
 }
 @media screen and (min-width: 48em) {
-  h1 {
-    font-size: var(--fontSizeHeaderLaptop);
-    color: orange;
-  }
-
+	h1 {
+		font-size: var(--fontSizeHeaderLaptop);
+		color: orange;
+	}
 }
 @media screen and (min-width: 64em) {
-  h1 {
-    font-size: var(--fontSizeHeaderMonitor);
-    color: yellow;
-  }
-  body {
-    align-self: center;
-    background: var(--colorWhite);
-  }
-
+	h1 {
+		font-size: var(--fontSizeHeaderMonitor);
+		color: yellow;
+	}
+	body {
+		align-self: center;
+		background: var(--colorWhite);
+	}
 }
 @media screen and (min-width: 80em) {
-  h1 {
-    font-size: var(--fontSizeHeaderMonitor);
-    color: green;
-  }
-
+	h1 {
+		font-size: var(--fontSizeHeaderMonitor);
+		color: green;
+	}
 }

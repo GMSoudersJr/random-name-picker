@@ -1,10 +1,12 @@
-<script>
+<script lang="ts">
 	import { STRINGS } from '$lib/strings.js';
+
+	const projectTitle: string = STRINGS.appTitle;
 </script>
 
 <div class="outer-container">
 	<div class="inner-container">
-		<h1>{STRINGS.appTitle}</h1>
+		<h1>{projectTitle}</h1>
 	</div>
 </div>
 

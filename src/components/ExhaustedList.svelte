@@ -1,20 +1,20 @@
-<script>
+<script lang="ts">
 	import { STRINGS } from '$lib/strings.js';
 </script>
 
-<div id="exhausted-list-warning" class="exhausted-list-warning">
+<section id="exhausted-list-warning" class="exhausted-list-warning">
 	<h2>
 		{STRINGS.exhaustedList}
 	</h2>
-</div>
+</section>
 
 <style>
-	div {
+	section {
 		align-self: center;
 		text-align: center;
 		width: 80%;
 	}
 	h2 {
-		color: gold;
+		color: #ffd202;
 	}
 </style>

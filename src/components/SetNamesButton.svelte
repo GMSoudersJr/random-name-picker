@@ -2,39 +2,57 @@
 	import { STRINGS } from '$lib/strings.js';
 
 	import {
-		arrayOfNames,
-		stringOfNames,
-		currentName,
-		numberOfNamesDrawn,
-		numberOfNames,
-		progress
-	} from '$lib/stores.js';
-
-	import {
 		ClipboardListIcon,
 		RepeatIcon,
 		RefreshCwIcon,
 		type Icon as IconType
 	} from 'lucide-svelte';
+	import type {Tween} from 'svelte/motion';
 
 	type ButtonText = {
 		text: string;
 		icon: typeof IconType;
 	};
 
+	const setListButtonText: ButtonText = {
+		text: STRINGS.buttonText.setList,
+		icon: ClipboardListIcon
+	};
+
+	const refreshListButtonText: ButtonText = {
+		text: STRINGS.buttonText.refreshList,
+		icon: RefreshCwIcon
+	};
+
+	const repeatListButtonText: ButtonText = {
+		text: STRINGS.buttonText.reloadList,
+		icon: RepeatIcon
+	};
+
 	function setArrayOfNames() {
-		currentName.set('');
-		numberOfNamesDrawn.set(0);
-		arrayOfNames.set([]);
-		let cleanedArrayOfNames = $stringOfNames.split(/[,.\s]/).filter((name) => name.length > 0);
-		if ($stringOfNames.length === 0) {
-			console.log('no names inserted');
-		} else {
-			arrayOfNames.set(cleanedArrayOfNames);
-			numberOfNames.set(cleanedArrayOfNames.length);
-			progress.set(0);
-		}
+		setListOfNames = undefined;
+		setListOfNames = names && names.split(/\s+|,|\r\n/).filter((name) => name.length > 0);
+		randomName = undefined;
+		randomNamesCalled = [];
+		progress.target = 0;
 	}
+
+	interface Props {
+		names: string | undefined;
+		randomName: string | undefined;
+		setListOfNames: string | string[] | undefined;
+		randomNamesCalled: string[];
+		progress: Tween<number>;
+	}
+
+	let {
+		names = $bindable(),
+		setListOfNames = $bindable(),
+		randomName = $bindable(),
+		randomNamesCalled = $bindable(),
+		progress = $bindable(),
+	}: Props = $props();
+
 </script>
 
 <button
@@ -43,19 +61,18 @@
 	type="button"
 	class="button set-names"
 	onclick={setArrayOfNames}
-	disabled={$stringOfNames.length == 0}
 >
-	{#if $arrayOfNames.length > 0}
-		{@const Icon = RefreshCwIcon}
-		{STRINGS.buttonText.refreshList}
+	{#if setListOfNames && setListOfNames.length > 0}
+		{@const Icon = refreshListButtonText.icon}
+		{refreshListButtonText.text}
 		<Icon />
-	{:else if $currentName}
-		{@const Icon = RepeatIcon}
-		{STRINGS.buttonText.reloadList}
+	{:else if randomName}
+		{@const Icon = repeatListButtonText.icon}
+		{repeatListButtonText.text}
 		<Icon />
 	{:else}
-		{@const Icon = ClipboardListIcon}
-		{STRINGS.buttonText.setList}
+		{@const Icon = setListButtonText.icon}
+		{setListButtonText.text}
 		<Icon />
 	{/if}
 </button>

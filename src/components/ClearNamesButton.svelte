@@ -1,24 +1,39 @@
 <script lang="ts">
 	import { STRINGS } from '$lib/strings.js';
-	import {
-		arrayOfNames,
-		currentName,
-		stringOfNames,
-		numberOfNamesDrawn,
-		progress
-	} from '$lib/stores.js';
 
-	import {
-		Trash2Icon,
-		type Icon as IconType
-	} from 'lucide-svelte';
+	import { Trash2Icon, type Icon as IconType } from 'lucide-svelte';
+	import type { Tween } from 'svelte/motion';
+
+	interface Props {
+		names: string | undefined;
+		progress: Tween<number>;
+		randomName: string | undefined;
+		randomNamesCalled: string[];
+	}
+
+	type ButtonProps = {
+		icon: typeof IconType;
+		text: string;
+	};
+
+	const buttonProps: ButtonProps = {
+		text: STRINGS.buttonText.clearNames,
+		icon: Trash2Icon
+	};
+
+	let {
+		names = $bindable(),
+		progress = $bindable(),
+		randomName = $bindable(),
+		randomNamesCalled = $bindable(),
+		...props
+	}: Props = $props();
 
 	function clearNames() {
-		arrayOfNames.set([]);
-		currentName.set('');
-		stringOfNames.set('');
-		numberOfNamesDrawn.set(0);
-		progress.set(0);
+		names = undefined;
+		progress.target = 0;
+		randomName = undefined;
+		randomNamesCalled = [];
 	}
 </script>
 
@@ -28,11 +43,13 @@
 	type="button"
 	class="button clear-names"
 	onclick={clearNames}
-	disabled={$stringOfNames.length == 0}
+	disabled={names?.length === 0}
+	{...props}
 >
-	{#if STRINGS.buttonText.clearNames}
-		{@const Icon = Trash2Icon}
-		{STRINGS.buttonText.clearNames} <Icon />
+	{#if buttonProps}
+		{@const Icon = buttonProps.icon}
+		{buttonProps.text}
+		<Icon />
 	{/if}
 </button>
 

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { STRINGS } from '$lib/strings.js';
-	import { stringOfNames } from '$lib/stores.js';
 	import { Icon as IconType, ClipboardIcon, PencilIcon } from 'lucide-svelte';
 
 	type FormLabel = {
@@ -14,6 +13,8 @@
 		leftIcon: ClipboardIcon,
 		rightIcon: PencilIcon
 	};
+
+	let { value = $bindable(), ...props } = $props();
 </script>
 
 <div id="names-input-container" class="container">
@@ -22,7 +23,7 @@
 			{@const LeftIcon = formLabel.leftIcon}
 			{@const RightIcon = formLabel.rightIcon}
 			<LeftIcon />
-			{formLabel.text}
+			<h2>{formLabel.text}</h2>
 			<RightIcon />
 		{/if}
 	</label>
@@ -30,7 +31,8 @@
 		id="name-list"
 		name="name-list"
 		class="input"
-		bind:value={$stringOfNames}
+		bind:value
+		{...props}
 		placeholder={STRINGS.textarea.placeholder}
 		required
 	></textarea>
