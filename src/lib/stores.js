@@ -4,11 +4,11 @@ import { cubicOut } from 'svelte/easing';
 
 export const arrayOfNames = writable([]);
 
-export const currentName = writable("");
+export const currentName = writable('');
 
-export const stringOfNames = writable("");
+export const stringOfNames = writable('');
 
-export const numberOfNames = writable(null);
+export const numberOfNames = writable(0);
 
 export const numberOfNamesDrawn = writable(0);
 

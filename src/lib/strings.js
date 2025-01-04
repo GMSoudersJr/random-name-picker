@@ -1,19 +1,19 @@
 import { thisYear } from '$lib/utils.js';
 
 export const STRINGS = {
-	appTitle: "Random Name Picker",
+	appTitle: 'RANDOM NAME PICKER',
 	textarea: {
-		label: "📝 Names ⬇",
-		placeholder: "ENTER NAMES HERE",
+		label: '📝 Names ⬇',
+		placeholder: 'ENTER NAMES HERE'
 	},
 	buttonText: {
-		clearNames: "Clear Names 🗑",
-		setList: "Set List 📋",
-		resetList: "Reset List 🔄",
-		reloadList: "Reload the list 🔁",
-		listFinished: "All Done!",
-		chooseName: "CLICK FOR A RANDOM NAME! 📛",
+		clearNames: 'CLEAR NAMES',
+		setList: 'SET LIST',
+		refreshList: 'REFRESH LIST',
+		reloadList: 'REPEAT LIST',
+		listFinished: 'All Done!',
+		chooseName: 'CLICK FOR A RANDOM NAME!'
 	},
-	exhaustedList: 'The list is finished.  Click "Reload the list" to start over.',
+	exhaustedList: 'The list is finished.  Click "REPEAT LIST" to start over.',
 	copyright: `© ${thisYear()} by Gerald M. Souders Jr.`
 };
