@@ -1,7 +1,7 @@
 <script>
   import { socials } from '$lib/socials.js';
-  let innerWidth = 0;
-  $: displayIconLight = innerWidth <= 64 * 16;
+  let innerWidth = $state(0);
+  let displayIconLight = $derived(innerWidth <= 64 * 16);
 </script>
 
 <svelte:window bind:innerWidth />

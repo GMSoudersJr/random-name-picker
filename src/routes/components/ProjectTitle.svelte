@@ -1,29 +1,32 @@
 <script>
   import { STRINGS } from '$lib/strings.js';
 </script>
-<div class="outer-container">
-  <div class="inner-container">
-    <h1>{STRINGS.appTitle}</h1>
-  </div>
-</div>
+
+<header>
+  <h1>{STRINGS.appTitle}</h1>
+</header>
+
 <style>
-  .outer-container {
-    background: linear-gradient(to bottom right, var(--colorPurple),
-    var(--colorAqua), var(--colorPurple));
-    padding: 1rem;
-    border-radius: 5px;
-    padding: 5px;
+  header {
+    background: linear-gradient(135deg, var(--colorPurple), var(--colorBlue));
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .inner-container {
-    border-radius: 5px;
-    padding: 1rem;
-    background-color: var(--colorWhite);
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 18px 18px;
+    pointer-events: none;
   }
   h1 {
-    text-align: center;
-    background-color: var(--colorWhite);
-    letter-spacing: -1.5px;
+    position: relative;
+    color: var(--colorWhite);
+    letter-spacing: -1px;
     margin: 0;
-    color: var(--colorPurple);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
 </style>

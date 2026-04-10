@@ -35,25 +35,16 @@
 
 }
 * {
-  user-select:none;
 	box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-html {
-  display: flex;
-  flex-direction: column;
-}
 body {
   background: var(--colorPurple);
-  min-width: 50vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: start;
-  gap: 1rem;
-  padding: 0.5em;
+  overflow: hidden;
 }
 h1 {
   font-family: var(--fontFamilyHeading);
@@ -71,45 +62,38 @@ button {
   width: 100%;
   border-radius: 5px;
   background: var(--colorGray);
+  user-select: none;
 }
 button:hover {
   filter: brightness(110%);
 }
 textarea {
-  font-family: var(--fontFamilyRegular)
+  font-family: var(--fontFamilyRegular);
   width: 100%;
-  color: var(--colorBlue)
+  color: var(--colorBlue);
 }
 
 @media screen and (min-width: 40em) {
   h1 {
     font-size: var(--fontSizeHeaderTablet);
-    color: red;
   }
-
 }
 @media screen and (min-width: 48em) {
   h1 {
     font-size: var(--fontSizeHeaderLaptop);
-    color: orange;
   }
-
 }
 @media screen and (min-width: 64em) {
   h1 {
     font-size: var(--fontSizeHeaderMonitor);
-    color: yellow;
   }
   body {
     align-self: center;
     background: var(--colorWhite);
   }
-
 }
 @media screen and (min-width: 80em) {
   h1 {
     font-size: var(--fontSizeHeaderMonitor);
-    color: green;
   }
-
 }

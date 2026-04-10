@@ -1,10 +1,8 @@
 <script>
-  import { arrayOfNames } from '$lib/stores.js';
-  $: names = $arrayOfNames;
-
+  import { appState } from '$lib/state.svelte.js';
 </script>
 
-{#each names as name}
+{#each appState.arrayOfNames as name (name)}
   <p>{name}</p>
 {/each}
 

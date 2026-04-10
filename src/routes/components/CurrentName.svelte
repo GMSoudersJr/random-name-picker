@@ -1,17 +1,17 @@
 <script>
-  import { currentName } from '$lib/stores.js';
+  import { appState } from '$lib/state.svelte.js';
 </script>
 
 <div class="card">
-  {#if !$currentName}
+  {#if !appState.currentName}
     <h4>Pick a Random Name Below</h4>
   {:else}
-  <div class="emoji">
-    🗣
-  </div>
-  <h1 class="speaker-name">
-    {$currentName}
-  </h1>
+    <div class="emoji">
+      🗣
+    </div>
+    <h1 class="speaker-name">
+      {appState.currentName}
+    </h1>
   {/if}
 </div>
 

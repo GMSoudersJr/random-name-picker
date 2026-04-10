@@ -1,7 +1,6 @@
 <script>
   import { STRINGS } from '$lib/strings.js';
-  import { stringOfNames } from '$lib/stores.js';
-  let labelText = "📝 Names ⬇"
+  import { appState } from '$lib/state.svelte.js';
 </script>
 
 <div
@@ -11,11 +10,11 @@
   <label class="label" for="name-list">
     {STRINGS.textarea.label}
   </label>
-  <textarea 
+  <textarea
     id="name-list"
     name="name-list"
     class="input"
-    bind:value={$stringOfNames}
+    bind:value={appState.stringOfNames}
     placeholder={STRINGS.textarea.placeholder}
     required
   ></textarea>
@@ -27,16 +26,18 @@
     flex-direction: column;
     gap: 0.5em;
     border-radius: 10px;
-    background: white;
     background: linear-gradient(150deg, var(--colorAqua), var(--colorPurple));
-    height: 25vh;
+    height: clamp(120px, 28vh, 240px);
     padding: 15px 20px 20px 20px;
   }
   label {
-    font-family: var(--fontFamilyEmoji);
+    font-family: var(--fontFamilyRegular);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     text-align: center;
-    align-items: center;
-    color: var(--colorWhite );
+    color: rgba(255, 255, 255, 0.85);
   }
   textarea {
     resize: none;

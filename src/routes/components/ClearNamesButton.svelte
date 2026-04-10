@@ -1,19 +1,13 @@
 <script>
   import { STRINGS } from '$lib/strings.js';
-  import {
-    arrayOfNames,
-    currentName,
-    stringOfNames,
-    numberOfNamesDrawn,
-    progress,
-  } from '$lib/stores.js';
+  import { appState } from '$lib/state.svelte.js';
 
   function clearNames() {
-    arrayOfNames.set([]);
-    currentName.set("");
-    stringOfNames.set("");
-    numberOfNamesDrawn.set(0);
-    progress.set(0);
+    appState.arrayOfNames = [];
+    appState.currentName = '';
+    appState.stringOfNames = '';
+    appState.numberOfNamesDrawn = 0;
+    appState.progress.target = 0;
   }
 </script>
 
@@ -22,11 +16,18 @@
   name="clear-names"
   type="button"
   class="button clear-names"
-  on:click={clearNames}
-  disabled={$stringOfNames.length == 0}
+  onclick={clearNames}
+  disabled={appState.stringOfNames.length === 0}
 >
   {STRINGS.buttonText.clearNames}
 </button>
 
 <style>
+  .clear-names {
+    background: #c0392b;
+    color: var(--colorWhite);
+  }
+  .clear-names:hover {
+    filter: brightness(115%);
+  }
 </style>

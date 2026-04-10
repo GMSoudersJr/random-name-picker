@@ -3,8 +3,8 @@ import { thisYear } from '$lib/utils.js';
 export const STRINGS = {
 	appTitle: "Random Name Picker",
 	textarea: {
-		label: "📝 Names ⬇",
-		placeholder: "ENTER NAMES HERE",
+		label: "Enter one name per line",
+		placeholder: "Alex\nJordan\nSam\n...",
 	},
 	buttonText: {
 		clearNames: "Clear Names 🗑",

@@ -1,75 +1,150 @@
 <script>
+  import confetti from 'canvas-confetti';
   import { STRINGS } from '$lib/strings.js';
-  import {
-    arrayOfNames,
-    currentName,
-    numberOfNames,
-    numberOfNamesDrawn,
-    progress,
-  } from '$lib/stores.js';
+  import { appState } from '$lib/state.svelte.js';
+
+  function fireConfetti() {
+    const colors = ['#5680E9', '#5AB9EA', '#8860D0', '#C1C8E4', '#84CEEB'];
+    confetti({
+      particleCount: 120,
+      spread: 80,
+      origin: { y: 0.6 },
+      colors,
+    });
+    setTimeout(() => {
+      confetti({
+        particleCount: 60,
+        spread: 120,
+        origin: { y: 0.5 },
+        colors,
+        scalar: 0.8,
+      });
+    }, 150);
+  }
+
+  let nameEl = $state(null);
+
+  $effect(() => {
+    const _ = appState.currentName;
+    if (nameEl) {
+      nameEl.classList.remove('roll-in');
+      void nameEl.offsetWidth;
+      nameEl.classList.add('roll-in');
+    }
+  });
 
   function chooseRandomName() {
-    if ( $arrayOfNames.length === 0 ) {
-      currentName.set(null);
-      progress.set(0);
+    if (appState.arrayOfNames.length === 0) {
+      appState.currentName = '';
+      appState.progress.target = 0;
     } else {
-      let indexOfRandomName = Math.floor(Math.random() * $arrayOfNames.length);
-      let randomName = $arrayOfNames.splice(indexOfRandomName, 1);
-      currentName.set(randomName);
-      arrayOfNames.set($arrayOfNames);
-      numberOfNamesDrawn.update(numberOfNames => numberOfNames = numberOfNames + 1);
-      progress.set(($numberOfNamesDrawn/$numberOfNames));
+      const index = Math.floor(Math.random() * appState.arrayOfNames.length);
+      const [randomName] = appState.arrayOfNames.splice(index, 1);
+      appState.currentName = randomName;
+      appState.numberOfNamesDrawn += 1;
+      if (appState.numberOfNames !== null) {
+        appState.progress.target = appState.numberOfNamesDrawn / appState.numberOfNames;
+      }
+      fireConfetti();
     }
   }
 </script>
 
-<button
-  id="pick-names"
-  name="pick-names"
-  type="button"
-  class="button pick-names"
-  on:click={chooseRandomName}
->
-    {#if !$currentName}
-      <h4>{STRINGS.buttonText.chooseName}</h4>
+<div class="pick-row">
+  <button
+    id="pick-names"
+    name="pick-names"
+    type="button"
+    class="button pick-button"
+    onclick={chooseRandomName}
+  >
+    <span class="emoji">🗣</span>
+  </button>
+
+  <div class="name-display">
+    {#if appState.currentName}
+      <h1 class="speaker-name" bind:this={nameEl}>
+        {appState.currentName}
+      </h1>
     {:else}
-    <div class="emoji">
-      🗣
-    </div>
-    <h1
-      class="speaker-name"
-    >
-      {$currentName}
-    </h1>
+      <span class="placeholder">· · ·</span>
     {/if}
-</button>
+  </div>
+</div>
 
 <style>
-  .pick-names {
-    height: 15vh;
-    width: 90%;
+  .pick-row {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    align-self: center;
-    background: var(--colorGray);
+    gap: 1em;
+    width: 100%;
   }
-  .emoji {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
+  .pick-button {
     font-family: var(--fontFamilyEmoji);
-    font-size: var(--fontSizeHeaderMonitor);
-    flex: 1
+    font-size: 2.5rem;
+    background: var(--colorBlue);
+    color: var(--colorWhite);
+    border-radius: 50%;
+    padding: 0;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(86, 128, 233, 0.5);
+  }
+  .pick-button::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 3px solid var(--colorBlue);
+    animation: pulse-ring 1.8s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  .name-display {
+    flex: 1;
+    overflow: hidden;
+    padding: 0.75em 1.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 24px rgba(86, 128, 233, 0.25);
+    height: 100px;
+  }
+  .placeholder {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 2rem;
+    letter-spacing: 0.3em;
   }
   .speaker-name {
-    text-align: center;
-    padding-left: 0.5em;
-    color: dodgerblue;
-    flex: 2;
+    color: var(--colorWhite);
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 5rem);
+    line-height: 1.1;
+    word-break: break-word;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
-  h4 {
-    text-align: center;
+
+  @keyframes rollIn {
+    from {
+      transform: translateY(60px) rotateX(90deg);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) rotateX(0deg);
+      opacity: 1;
+    }
+  }
+
+  .speaker-name.roll-in {
+    animation: rollIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 </style>
