@@ -4,6 +4,8 @@ import { cubicOut } from 'svelte/easing';
 class AppState {
 	/** @type {string[]} */
 	arrayOfNames = $state([]);
+	/** @type {string[]} */
+	originalNames = $state([]);
 	/** @type {string} */
 	currentName = $state('');
 	/** @type {string} */

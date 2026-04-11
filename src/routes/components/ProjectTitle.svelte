@@ -9,8 +9,15 @@
 </header>
 
 <style>
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
   header {
-    background: linear-gradient(135deg, var(--colorPurple), var(--colorBlue));
+    background: linear-gradient(135deg, var(--colorPurple), var(--colorBlue), var(--colorAqua), var(--colorPurple));
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
     padding: 1.25rem 1.5rem;
     text-align: center;
     position: relative;

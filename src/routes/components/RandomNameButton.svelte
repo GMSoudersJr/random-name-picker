@@ -1,10 +1,13 @@
-<script>
+<script lang="ts">
   import confetti from 'canvas-confetti';
   import { STRINGS } from '$lib/strings.js';
   import { appState } from '$lib/state.svelte.js';
+  import { themeStore } from '$lib/theme.svelte.js';
 
   function fireConfetti() {
-    const colors = ['#5680E9', '#5AB9EA', '#8860D0', '#C1C8E4', '#84CEEB'];
+    const colors = themeStore.current === 'dark'
+      ? ['#5680E9', '#5AB9EA', '#8860D0', '#C1C8E4', '#84CEEB']
+      : ['#818cf8', '#38bdf8', '#a78bfa', '#86efac', '#fde68a'];
     confetti({
       particleCount: 120,
       spread: 80,
@@ -56,6 +59,7 @@
     name="pick-names"
     type="button"
     class="button pick-button"
+    class:has-names={appState.arrayOfNames.length > 0}
     onclick={chooseRandomName}
   >
     <span class="emoji">🗣</span>
@@ -98,8 +102,11 @@
     inset: -4px;
     border-radius: 50%;
     border: 3px solid var(--colorBlue);
-    animation: pulse-ring 1.8s ease-out infinite;
+    opacity: 0;
     pointer-events: none;
+  }
+  .pick-button.has-names::after {
+    animation: pulse-ring 1.8s ease-out infinite;
   }
   @keyframes pulse-ring {
     0% { transform: scale(1); opacity: 0.8; }
@@ -144,8 +151,7 @@
     }
   }
 
-  /* svelte-ignore css_unused_selector */
-  .speaker-name.roll-in {
+  .speaker-name:global(.roll-in) {
     animation: rollIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 </style>

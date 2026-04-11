@@ -12,6 +12,7 @@
       console.log("no names inserted");
     } else {
       appState.arrayOfNames = cleanedArrayOfNames;
+      appState.originalNames = [...cleanedArrayOfNames];
       appState.numberOfNames = cleanedArrayOfNames.length;
       appState.progress.target = 0;
     }

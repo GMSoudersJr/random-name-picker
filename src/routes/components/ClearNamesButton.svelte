@@ -4,6 +4,7 @@
 
   function clearNames() {
     appState.arrayOfNames = [];
+    appState.originalNames = [];
     appState.currentName = '';
     appState.stringOfNames = '';
     appState.numberOfNamesDrawn = 0;
