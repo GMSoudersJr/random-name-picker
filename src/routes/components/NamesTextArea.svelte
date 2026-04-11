@@ -37,7 +37,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-align: center;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--theme-label-color);
   }
   textarea {
     resize: none;
@@ -45,7 +45,7 @@
     text-align: center;
     font-size: 16px;
     height: 100%;
-    background: #F1F1F1;
-    color: black;
+    background: var(--theme-textarea-bg);
+    color: var(--theme-textarea-color);
   }
 </style>

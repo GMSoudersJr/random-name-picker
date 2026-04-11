@@ -90,7 +90,7 @@
     height: 80px;
     flex-shrink: 0;
     position: relative;
-    box-shadow: 0 4px 15px rgba(86, 128, 233, 0.5);
+    box-shadow: 0 4px 15px var(--theme-pick-btn-shadow);
   }
   .pick-button::after {
     content: '';
@@ -113,24 +113,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--theme-surface);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 24px rgba(86, 128, 233, 0.25);
+    border: 1px solid var(--theme-surface-border);
+    box-shadow: 0 0 24px var(--theme-surface-shadow);
     height: 100px;
   }
   .placeholder {
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--theme-placeholder);
     font-size: 2rem;
     letter-spacing: 0.3em;
   }
   .speaker-name {
-    color: var(--colorWhite);
+    color: var(--theme-name-color);
     margin: 0;
     font-size: clamp(2rem, 6vw, 5rem);
     line-height: 1.1;
     word-break: break-word;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px var(--theme-name-shadow);
   }
 
   @keyframes rollIn {
@@ -144,6 +144,7 @@
     }
   }
 
+  /* svelte-ignore css_unused_selector */
   .speaker-name.roll-in {
     animation: rollIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }

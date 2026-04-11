@@ -1,10 +1,15 @@
-<script>
+<script lang="ts">
+  import { onMount } from 'svelte';
   import { socials } from '$lib/socials.js';
-  let innerWidth = $state(0);
-  let displayIconLight = $derived(innerWidth <= 64 * 16);
+  import { themeStore } from '$lib/theme.svelte.js';
+
+  onMount(() => {
+    themeStore.init();
+  });
+
+  let useLightIcons = $derived(themeStore.current === 'dark');
 </script>
 
-<svelte:window bind:innerWidth />
 <section class="contact" id="contact">
 {#each socials as social (social.id)}
   <a
@@ -21,7 +26,7 @@
       <img
         id={`${social.id}-icon`}
         class="icon"
-        src={displayIconLight ? social.iconUrlLight : social.iconUrl}
+        src={useLightIcons ? social.iconUrlLight : social.iconUrl}
         alt={social.alt}
       />
     {/if}
@@ -71,4 +76,3 @@
     }
   }
 </style>
-

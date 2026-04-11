@@ -1,3 +1,38 @@
+:root,
+[data-theme="dark"] {
+  --theme-body-bg: #1e1b2e;
+  --theme-text-primary: var(--colorWhite);
+  --theme-text-muted: rgba(255, 255, 255, 0.7);
+  --theme-label-color: rgba(255, 255, 255, 0.85);
+  --theme-surface: rgba(0, 0, 0, 0.25);
+  --theme-surface-border: rgba(255, 255, 255, 0.12);
+  --theme-surface-shadow: rgba(86, 128, 233, 0.25);
+  --theme-progress-track: rgba(255, 255, 255, 0.2);
+  --theme-textarea-bg: #F1F1F1;
+  --theme-textarea-color: black;
+  --theme-placeholder: rgba(255, 255, 255, 0.25);
+  --theme-name-color: var(--colorWhite);
+  --theme-name-shadow: rgba(0, 0, 0, 0.3);
+  --theme-pick-btn-shadow: rgba(86, 128, 233, 0.5);
+}
+
+[data-theme="light"] {
+  --theme-body-bg: #f0f2ff;
+  --theme-text-primary: var(--colorCharcoal);
+  --theme-text-muted: rgba(0, 0, 0, 0.6);
+  --theme-label-color: rgba(0, 0, 0, 0.65);
+  --theme-surface: rgba(255, 255, 255, 0.75);
+  --theme-surface-border: rgba(0, 0, 0, 0.1);
+  --theme-surface-shadow: rgba(86, 128, 233, 0.15);
+  --theme-progress-track: rgba(0, 0, 0, 0.12);
+  --theme-textarea-bg: #ffffff;
+  --theme-textarea-color: var(--colorCharcoal);
+  --theme-placeholder: rgba(0, 0, 0, 0.2);
+  --theme-name-color: var(--colorCharcoal);
+  --theme-name-shadow: rgba(0, 0, 0, 0.1);
+  --theme-pick-btn-shadow: rgba(86, 128, 233, 0.3);
+}
+
 :root {
   --fontFamilyHeading: "Roboto", sans-serif;
   --fontFamilyRegular: "Noto Sans KR", "Roboto", sans-serif;
@@ -40,7 +75,7 @@
   padding: 0;
 }
 body {
-  background: var(--colorPurple);
+  background: var(--theme-body-bg);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -86,10 +121,6 @@ textarea {
 @media screen and (min-width: 64em) {
   h1 {
     font-size: var(--fontSizeHeaderMonitor);
-  }
-  body {
-    align-self: center;
-    background: var(--colorWhite);
   }
 }
 @media screen and (min-width: 80em) {

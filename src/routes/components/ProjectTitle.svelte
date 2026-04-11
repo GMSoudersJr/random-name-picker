@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
   import { STRINGS } from '$lib/strings.js';
+  import ThemeToggle from './ThemeToggle.svelte';
 </script>
 
 <header>
   <h1>{STRINGS.appTitle}</h1>
+  <ThemeToggle />
 </header>
 
 <style>

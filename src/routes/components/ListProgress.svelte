@@ -25,7 +25,7 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--theme-text-muted);
     text-align: right;
   }
   progress {
@@ -33,11 +33,11 @@
     height: 10px;
     border: none;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--theme-progress-track);
     appearance: none;
   }
   progress::-webkit-progress-bar {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--theme-progress-track);
     border-radius: 5px;
   }
   progress::-webkit-progress-value {
