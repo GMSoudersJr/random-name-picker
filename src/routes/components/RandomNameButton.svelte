@@ -25,7 +25,7 @@
     }, 150);
   }
 
-  let nameEl = $state(null);
+  let nameEl = $state<HTMLHeadingElement | null>(null);
 
   $effect(() => {
     const _ = appState.currentName;
