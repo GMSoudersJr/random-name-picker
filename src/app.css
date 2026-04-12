@@ -80,6 +80,7 @@
 body {
   background: var(--theme-body-bg);
   height: 100vh;
+  height: 100dvh; /* accounts for mobile browser chrome */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -92,8 +93,8 @@ label {
   font-size: var(--fontSizeSubheaderMobile);
 }
 button {
-  padding: 15px 32px;
-  font-size: 16px;
+  padding: 12px 20px;
+  font-size: 14px;
   align-self: center;
   font-family: var(--fontFamilyEmoji);
   color: black;
@@ -101,6 +102,15 @@ button {
   border-radius: 5px;
   background: var(--colorGray);
   user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 40em) {
+  button {
+    padding: 15px 32px;
+    font-size: 16px;
+  }
 }
 button:hover {
   filter: brightness(110%);

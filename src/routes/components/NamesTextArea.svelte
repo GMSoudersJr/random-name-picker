@@ -34,8 +34,8 @@
     gap: 0.5em;
     border-radius: 10px;
     background: linear-gradient(150deg, var(--colorAqua), var(--colorPurple));
-    height: clamp(120px, 28vh, 240px);
-    padding: 15px 20px 20px 20px;
+    height: clamp(100px, 22dvh, 240px);
+    padding: clamp(8px, 2vh, 15px) clamp(12px, 3vw, 20px);
   }
   label {
     font-family: var(--fontFamilyRegular);

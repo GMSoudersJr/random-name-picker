@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
-    padding: 1em;
+    gap: 0.25em;
+    padding: clamp(0.4em, 1.5vh, 1em);
   }
 
   p {

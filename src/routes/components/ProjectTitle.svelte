@@ -18,7 +18,7 @@
     background: linear-gradient(135deg, var(--colorPurple), var(--colorBlue), var(--colorAqua), var(--colorPurple));
     background-size: 300% 300%;
     animation: gradientShift 8s ease infinite;
-    padding: 1.25rem 1.5rem;
+    padding: clamp(0.6rem, 2vh, 1.25rem) 1.5rem;
     text-align: center;
     position: relative;
     overflow: hidden;

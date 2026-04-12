@@ -85,13 +85,13 @@
   }
   .pick-button {
     font-family: var(--fontFamilyEmoji);
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
     background: var(--colorBlue);
     color: var(--colorWhite);
     border-radius: 50%;
     padding: 0;
-    width: 80px;
-    height: 80px;
+    width: clamp(60px, 14vw, 80px);
+    height: clamp(60px, 14vw, 80px);
     flex-shrink: 0;
     position: relative;
     box-shadow: 0 4px 15px var(--theme-pick-btn-shadow);
@@ -115,7 +115,7 @@
   .name-display {
     flex: 1;
     overflow: hidden;
-    padding: 0.75em 1.5em;
+    padding: clamp(0.5em, 2vh, 0.75em) clamp(0.75em, 3vw, 1.5em);
     text-align: center;
     display: flex;
     align-items: center;
@@ -124,7 +124,7 @@
     border-radius: 12px;
     border: 1px solid var(--theme-surface-border);
     box-shadow: 0 0 24px var(--theme-surface-shadow);
-    height: 100px;
+    min-height: clamp(60px, 12vh, 100px);
   }
   .placeholder {
     color: var(--theme-placeholder);

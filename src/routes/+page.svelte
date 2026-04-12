@@ -36,8 +36,8 @@
     min-height: 0;
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    padding: 1em;
+    gap: clamp(0.4em, 1.5vh, 1em);
+    padding: clamp(0.5em, 2vw, 1em);
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
